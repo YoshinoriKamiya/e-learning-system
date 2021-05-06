@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <title><%= yield(:title) %>| E-learning</title>
     <title>ELearning</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -8,8 +9,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+  </div>
     <%= yield %>
+    </div>
   </body>
+  <footer class="text-center text-white bg-success" style="background-color: #f1f1f1;">
+  <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+   </footer>
+  </div>
+</footer>
 </html>
