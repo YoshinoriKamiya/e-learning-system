@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Saved successfully"
-      redirect_to root_url
+      redirect_to login_url
     else
       flash[:danger] = "Invaild content. Try again"
       render 'new'
@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 def show
   @user = User.find(params[:id])
 end
+
+
 
 private
 

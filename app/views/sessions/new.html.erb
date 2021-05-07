@@ -1,0 +1,26 @@
+<% provide(:title, 'Login') %>
+
+<br>
+<br>
+<br>
+<br>
+
+    <div class="container">
+      <h1 class="title text-center">Login</h1>
+       <div class="container">
+          <%= form_for(:session, url: sessions_path) do |f| %>
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "form-control" %>
+          <br>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control " %>
+
+          <%= f.submit "Login", class: "btn btn-block btn-success mt-5"%>
+
+          <% end %>
+
+          <p class="text-center mt-3 ">New here? <%= link_to "Sign up now", signup_path %></p>
+       </div>
+   </div>
+<br>
+<br>
