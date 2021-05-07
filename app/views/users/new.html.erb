@@ -13,22 +13,29 @@
 
 <section class="section">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-6">
+    <div class="columns is-ce5tered">
+      <div class="column is-5">
       <%= form_for @user do |f|%>
         <%= f.label :name %>
-        <%= f.text_field :name ,class: "form-control"%>
+        <%= f.text_field :name ,autofocus: true, autocomplete: "name", :placeholder => "Name", class: "form-control" %>
 
-        <%= f.label :email %>
-        <%= f.text_field :email ,class: "form-control"%>
-
+        <%= f.label :email ,class: "label " %>
+        <p class="control has-icons-left">
+        <%= f.text_field :email ,autofocus: true, autocomplete: "email", :placeholder => "Email", class: "form-control" %> 
+        
         <%= f.label :password %>
-        <%= f.password_field :password ,class: "form-control"%>
+        <%= f.password_field :password ,autofocus: true, autocomplete: "password", :placeholder => "Password", class: "form-control"%>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field:password_confirmation ,class: "form-control"%><br>
+        <%= f.label :password_confirmation, "Password Confirmation" %>
+        <%= f.password_field:password_confirmation ,autofocus: true, autocomplete: "new-Confimation", :placeholder => "Password Confimation", class: "form-control"%>
+        <br>
 
         <%= f.submit "Create my account" ,class: "btn btn-block btn-success" %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
       <% end %>
    </div>
