@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
   
+  # get 'category/index'
+  # get 'category/edit'
+  # get 'category/new'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :categories
 
   root 'static_pages#home'
-  get '/dashbord',to: 'static_pages#index'
+  get '/dashboard',to: 'static_pages#index'
+
+  get '/category',to: 'categories#index'
   
   get '/members',to: 'users#index'
   get '/profile' ,to: 'users#show'
- 
   get '/signup',to: 'users#new'
   get '/setting', to: 'users#setting'
 

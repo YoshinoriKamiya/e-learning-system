@@ -1,35 +1,41 @@
-<% provide(:title, 'Users' ) %>
+<% provide(:title, 'Menber' ) %>
 <div class="form content">
-  <div class="container"> 
-  <br>
+    <div class="container"> 
+    <br>
     <h1>All Users</h1>
         <ul class="users row mt-4">
             <% @users.each do |user|%>
-                    <li class="border rounded-lg m-2 w-50 col-xs-5 col-lg-5">
-                    
-                    <%= gravatar_for user, size: 52, class: "profile_image"%>
-                    
-                    <%= link_to user.name, user %>
-                    <% unless current_user?(user) %>
-                    <div id="follow_form" class="mt-2">
-                        <% if current_user.following?(user) %>
-                        <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),          
-                        html: { method: :delete} ,
-                            remote: true) do |f| %>
-                        <%= f.submit "Unfollow", class: "btn btn-large btn-secondary" %>
-                        <% end %>
-                        <% else %>
-                        <%= form_for(current_user.active_relationships.build, remote: true) do |f|%>
-                        <div><%= hidden_field_tag :followed_id, user.id %></div>
-                        <%= f.submit "Follow", class: "btn btn-large btn-primary" %>
-                        <% end %>
-                        <% end %>
-                    </div>
-                    <% end %>
-                    <%= link_to 'delete', user_path(user), method: :delete, data: {confirm: "You sure?"} %>
+                    <div class="border rounded-lg m-2 w-50 col-xs-5 col-lg-5">
+                    <li list-group-item>
+                        <%= gravatar_for user, size: 52, class: "profile_image"%>
                     </li>
+                    <li class="list-inline-item">
+                        <%= link_to user.name, user %>
+                    </li>
+                    <li>
+                        <% unless current_user?(user) %>
+                        <div id="follow_form" class="mt-2">
+                            <% if current_user.following?(user) %>
+                            <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),          
+                            html: { method: :delete} ,
+                                remote: true) do |f| %>
+                            <%= f.submit "Unfollow", class: "btn btn-large btn-secondary" %>
+                            <% end %>
+                            <% else %>
+                            <%= form_for(current_user.active_relationships.build, remote: true) do |f|%>
+                            <div><%= hidden_field_tag :followed_id, user.id %></div>
+                            <%= f.submit "Follow", class: "btn btn-large btn-primary" %>
+                            <% end %>
+                            <% end %>
+                        </div>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to 'delete', user_path(user), method: :delete, data: {confirm: "You sure?"} %>
+                    </li>
+                    </div>
             <% end %>
         </ul>
-      <%= will_paginate @users %>       
+        <%= will_paginate @users %>       
     </div>
 </div>
