@@ -14,3 +14,15 @@
  *= require_self
  */
 @import "bootstrap" ;
+
+.profile_image{
+  border-radius: 50%;
+}
+.border {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 15px;
+  padding-bottom:10px ;
+  padding-top:10px;
+  padding-left: 15px;
+}
