@@ -2,10 +2,26 @@
   <div class="row">
     <aside class="span">
       <section>
-        <h1>
-         
+      User information
+      <ul>
+          <%= gravater_for @user %>
           <%= @user.name%>
-        </h1>
+          <%= @user.email%>
+      </ul>
+      <ul>
+      <li style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px;">User Status</li>
+      </ul>
+      <ul>Word learned</ul>
+      <.follow>
+      
+      <ul>
+      <li>Activity Feeds</li>
+      </ul>
+      <ul>Word learned
+      </ul>
+      <li>Activity Feeds</li>
+      </ul>
+      
       </section>
     </aside>
   </div>
