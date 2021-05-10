@@ -10,7 +10,6 @@
     </div>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
     <div class="columns is-ce5tered">
@@ -26,10 +25,10 @@
         <%= f.label :password %>
         <%= f.password_field :password ,autofocus: true, autocomplete: "password", :placeholder => "Password", class: "form-control"%>
 
-        <%= f.label :password_confirmation, "Password Confirmation" %>
-        <%= f.password_field:password_confirmation ,autofocus: true, autocomplete: "new-Confimation", :placeholder => "Password Confimation", class: "form-control"%>
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field:password_confirmation ,autofocus: true, autocomplete: "new-Confimation", :placeholder => "Confimation", class: "form-control"%>
         <br>
-
+     
         <%= f.submit "Create my account" ,class: "btn btn-block btn-success" %>
         <br>
         <br>
