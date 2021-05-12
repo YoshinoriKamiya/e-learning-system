@@ -1,27 +1,19 @@
-<% provide(:title, @user.name) %>
-  <div class="row">
-    <aside class="span">
-      <section>
-      User information
-      <ul>
-          <%= gravater_for @user %>
+    <% provide(:title,'Profile') %>
+
+       <section>
+       <h1>
+          <%= gravatar_for @user%>
+         
+        </h1>
+        </section>
+        <section>
+        <%= render 'shared/stats'%>
+        </section>
+        <%= render 'follow_form' if logged_in? %>
+          <li class="mt-1">
           <%= @user.name%>
+       
           <%= @user.email%>
-      </ul>
-      <ul>
-      <li style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px;">User Status</li>
-      </ul>
-      <ul>Word learned</ul>
-      <.follow>
+          
       
-      <ul>
-      <li>Activity Feeds</li>
-      </ul>
-      <ul>Word learned
-      </ul>
-      <li>Activity Feeds</li>
-      </ul>
-      
-      </section>
-    </aside>
-  </div>
+  
