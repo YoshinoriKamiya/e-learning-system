@@ -1,39 +1,42 @@
 <% provide(:title, "Setting") %>
-  <br>
-  <br>
-  <div class="form">
-     <h1 class="text-center">
-      Settings
-   </div>
-      
-     <section class="section mb-5">
-        <div class="container">
-          <div class="columns is-ce5tered">
-            <div class="column is-5 w-50">
-              <%= form_for @user do |f|%>
-              <%= f.label :avatar %>
-              <%= f.file_field :image , class: "form-control"  %>
-
-              <%= f.label :name %>
-              <%= f.text_field :name ,autofocus: true, autocomplete: "name", :placeholder => "Name", class: "form-control " %>
-
-              <%= f.label :email ,class: "label " %>
-              <p class="control has-icons-left">
-              <%= f.text_field :email ,autofocus: true, autocomplete: "email", :placeholder => "Email", class: "form-control " %> 
-              
-              <%= f.label :password %>
-              <%= f.password_field :password ,autofocus: true, autocomplete: "password",  class: "form-control"%>
-
-              <%= f.label :password_confirmation, "Confirmation" %>
-              <%= f.password_field:password_confirmation ,autofocus: true, autocomplete: "new-Confimation",  class: "form-control"%>
-              <br>
-
-              <%= f.submit "Update" ,class: "btn btn-block btn-success" %>
-             
-              <% end %>
-           </div>
-         </div>
-       </div>
-     </section>
+    <br>
     <div class="container">
-    </div>  
+        <div class="form">
+            <h1 class="text-center">Settings</h1>
+            <div class="row"> 
+                <div class="column is-5 w-50">
+                    <%= form_for @user do |f|%>
+                        <div class="form-group">
+                            <%= f.label :avatar %>
+                            <%= f.file_field :image , class: "form-control" %>
+                        </div>
+                        
+                        <div class="form-group">
+                            <%= f.label :name %>
+                            <%= f.text_field :name ,autofocus: true, autocomplete: "name", :placeholder => "Name", class: "form-control" %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :email ,class: "label" %>
+                            <%= f.text_field :email ,autofocus: true, autocomplete: "email", :placeholder => "Email", class: "form-control" %> 
+                        </div>
+                        
+                        <div class="form-group">
+                            <%= f.label :password %>
+                            <%= f.password_field :password ,autofocus: true, autocomplete: "password",  class: "form-control" %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :password_confirmation, "Confirmation" %>
+                            <%= f.password_field:password_confirmation ,autofocus: true, autocomplete: "new-Confimation",  class: "form-control" %>
+                        </div>
+                        <div class="form-group mt-4">
+                            <%= f.submit "Update" ,class: "btn btn-block btn-success" %>
+                        </div>
+                        <br>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+      
