@@ -1,26 +1,37 @@
-<section>
-<br>
-    <h1>Categories (<%= "category.count"%>)</h1>
-    
-    <div>
-    
-        <ul class="users row mt-4">
-        <% @categories.each do |category|%>
-            <div class="border rounded-lg m-2 w-50 col-xs-5 col-lg-5">
-                
-                <li>
-                    <strong><%= category.title %></strong>
-                </li>
-                <li>
-                    <%= "word" %>
-                    <%= category.description %>
-                </li>
-                <li>
-                <% %>   
-                <%= link_to "Learn", " " ,class: "btn btn-large btn-info w-100 h-5" %>
-                </li>
-            </div>
-            <% end %>
-        </ul>  
+<% provide(:title,'Profile') %> 
+<br> 
+    <div class="container">
+        <ul class="nav nav-pills nav-warning float-right justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="/categories">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/categories?learned=1">Learned</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/categories?learned=0">Not learned</a>
+            </li>
+        </ul>
+        <h1>Categories (<%= @categories.count %>)</h1>
+
+        <div>
+            <ul class=" row mt-4">
+            <% @categories.each do |category|%>
+                <div class="border rounded-lg m-2 w-50 col-xs-5 col-lg-5">
+                    
+                    <li>
+                        <strong><%= category.title %></strong>
+                    </li>
+                    <li>
+                        <%= "word" %>
+                        <%= category.description %>
+                    </li>
+                    <li>
+                    <% %>   
+                    <%= link_to "Learn", " " ,class: "btn btn-large btn-info w-100 h-5" %>
+                    </li>
+                </div>
+                <% end %>
+            </ul>  
+        </div>
     </div>
-</section>

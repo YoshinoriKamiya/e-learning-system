@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   
-  # get 'category/index'
-  # get 'category/edit'
-  # get 'category/new'
+  
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
@@ -12,6 +10,7 @@ Rails.application.routes.draw do
   get '/dashboard',to: 'static_pages#index'
 
   get '/category',to: 'categories#index'
+
   
   get '/members',to: 'users#index'
   get '/profile' ,to: 'users#show'
