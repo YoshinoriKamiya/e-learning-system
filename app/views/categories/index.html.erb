@@ -1,0 +1,26 @@
+<section>
+<br>
+    <h1>Categories (<%= "category.count"%>)</h1>
+    
+    <div>
+    
+        <ul class="users row mt-4">
+        <% @categories.each do |category|%>
+            <div class="border rounded-lg m-2 w-50 col-xs-5 col-lg-5">
+                
+                <li>
+                    <strong><%= category.title %></strong>
+                </li>
+                <li>
+                    <%= "word" %>
+                    <%= category.description %>
+                </li>
+                <li>
+                <% %>   
+                <%= link_to "Learn", " " ,class: "btn btn-large btn-info w-100 h-5" %>
+                </li>
+            </div>
+            <% end %>
+        </ul>  
+    </div>
+</section>

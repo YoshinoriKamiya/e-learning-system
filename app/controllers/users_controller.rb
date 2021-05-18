@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :only_loggedin_users, only: [:index,:edit,:update]
+  # before_action :only_loggedin_users, only: [:index,:edit,:update]
   before_action :correct_user, only: [:edit, :update]
   before_action :only_loggedin_users, only: [:index, :edit, :update, 
                                               :destroy, :following, :followers]
@@ -41,6 +41,11 @@ class UsersController < ApplicationController
       flash[:danger] = "Invalid content. Try again"
       render 'edit'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to users_url
   end
 
   def destroy

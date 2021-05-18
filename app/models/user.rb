@@ -17,10 +17,10 @@ has_many :followed_users, through: :active_relationships, source: :followed
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
   validates :name, presence: true, length: { maximum: 50 }
   
-  
   has_secure_password 
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  
+  # has_many :categories
+
   def following?(other_user)
     active_relationships.find_by(followed_id: other_user.id)
    end

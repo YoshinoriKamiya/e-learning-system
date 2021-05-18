@@ -9,17 +9,17 @@
      <section class="section mb-5">
         <div class="container">
           <div class="columns is-ce5tered">
-            <div class="column is-5">
+            <div class="column is-5 w-50">
               <%= form_for @user do |f|%>
               <%= f.label :avatar %>
               <%= f.file_field :image , class: "form-control"  %>
 
               <%= f.label :name %>
-              <%= f.text_field :name ,autofocus: true, autocomplete: "name", :placeholder => "Name", class: "form-control" %>
+              <%= f.text_field :name ,autofocus: true, autocomplete: "name", :placeholder => "Name", class: "form-control " %>
 
               <%= f.label :email ,class: "label " %>
               <p class="control has-icons-left">
-              <%= f.text_field :email ,autofocus: true, autocomplete: "email", :placeholder => "Email", class: "form-control" %> 
+              <%= f.text_field :email ,autofocus: true, autocomplete: "email", :placeholder => "Email", class: "form-control " %> 
               
               <%= f.label :password %>
               <%= f.password_field :password ,autofocus: true, autocomplete: "password",  class: "form-control"%>

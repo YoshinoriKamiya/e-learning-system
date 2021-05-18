@@ -5,28 +5,23 @@
         <title>ELearning</title>
            <%= csrf_meta_tags %>
            <%= csp_meta_tag %>
-
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
             <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
             <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
         </head>
 
-    <body>
-    <div class="container">
-        <%= render 'layouts/header' %>
-        <div class="mt-5">
-        <%= render 'shared/error_messages'%>
-        </div>
-            <%= yield %>
-        </div>
-            <footer class="text-center text-white bg-success" style="background-color: #f1f1f1;">
-           
-            <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-           
-            © All right reserved
-            </footer>
-   
-            </div>
-           
-            </body>
-</html>
+        <body>
+            <div class="container">
+                <%= render 'layouts/header' %>
+                <div class="mt-5">
+                    <%= render 'shared/error_messages'%>
+                </div>
+                    <%= yield %>
+            </div>  
+                <footer class="text-center text-white bg-success" style="background-color: #f1f1f1;">
+                    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                        © All right reserved
+                    </div>
+                </footer>   
+        </body>
+    </html>
