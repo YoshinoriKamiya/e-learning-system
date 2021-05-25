@@ -16,8 +16,12 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <%= link_to "Category new", new_category_path, class: "dropdown-item" %>
+                            <%= link_to "Categories",category_words_path , class: "dropdown-item" %>
                         </li>
+                        <li>
+                            <%= link_to "Add category", new_category_path, class: "dropdown-item" %>
+                        </li>
+                       
                     </ul>
                 </li>
                 <% end %>

@@ -1,0 +1,49 @@
+<% provide(:title,'Add word') %>  
+  <br>
+<div class="container">
+    <div class="form">
+        <h2 class="text-center">Add word</h2>
+        <div class="column is-5 w-50">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h5>Admin|Add word</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <%= link_to "Back" ,"",class:"btn btn-sm btn-success"%>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-12">
+                        <%= form_for(@word) do |f| %>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <%= f.label :word %>
+                                    <%= f.text_field :word, class: "form-control"%>
+                                    <%= f.hidden_field :category_id, value:@categories_name.id , class: "form-control"%> 
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <%= f.label :choice %>
+                                <%= f.fields_for :choices do |g| %>
+                                    <div class="form-group">
+                                        <%= g.text_field :choice, class: "form-control"%>
+                                        <div> Current</div>
+                                        <%= g.check_box :correct_ans %>
+                                    </div>
+                                <% end %>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="form-group col-5">
+                                    <%= f.submit "Submit", class:"btn btn-block btn-success mt-1"%>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
