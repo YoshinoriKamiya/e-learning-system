@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'learn/new'
+  get 'learn/show'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   
   resources :categories
   resources :words
+  resources :learns , only: [:new, :create, :show]
 
   get '/categories/:category_id/words/new', to: 'words#new', :as => :new_category_words
 

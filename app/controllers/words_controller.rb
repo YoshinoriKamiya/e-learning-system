@@ -1,7 +1,9 @@
 class WordsController < ApplicationController
   
   def index
-    @words = Word.where(:category_id = params[:category_id])
+    @words = Word.where(params[:category_id == params[:category_id]] )
+    # @words = Word.where(params[:category_id])
+    # @words = Word.all
   end
 
   def new

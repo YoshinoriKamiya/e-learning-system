@@ -40,7 +40,7 @@ end
   end
 
   def destroy
-      Category.find(params[:id]).destroy
+      Category.find(params[id]).destroy
       flash[:success] = "Category deleted"
       redirect_to categories_path
   end
