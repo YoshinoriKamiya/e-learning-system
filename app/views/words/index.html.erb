@@ -1,0 +1,35 @@
+<% provide(:title,'word') %>  
+  <br>
+<% provide(:title,'Add word') %>  
+  <br>
+<div class="container">
+    <div class="form">
+        <h2 class="text-center">Word & Choice List</h2>
+        <div class="column is-5 w-50">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <%= "@category_id"%>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <%= link_to "Edit" ,"edit_category_path(category)",class:"btn btn-sm btn-success"%>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-12">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <%= @word_id %>
+                                <%= "@choices each do |choice|" %>
+                                <%= @choice%>
+                                <% "end" %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,16 +19,21 @@
             <% @categories.each do |category|%>
                 <div class="border rounded-lg m-2 w-50 col-xs-5 col-lg-5">
                     
-                    <li>
-                        <strong><%= category.title %></strong>
+                    <li class="flex-row">
+                        
+                        <h3><%= category.title %></h3>
                     </li>
                     <li>
-                        <%= "word" %>
                         <%= category.description %>
                     </li>
                     <li>
-                    <% %>   
-                    <%= link_to "Learn", " " ,class: "btn btn-large btn-info w-100 h-5" %>
+                    <% if current_user.admin == true %>   
+                    <%= link_to "Edit", edit_category_url(category), class:"btn btn-large btn-success"  %>
+
+                    <%= link_to "Delete", category_url(category), method: :delete, data: {confirm: "are you sure? "}, class:"btn btn-large btn-danger"  %>
+
+                    <% end %>
+                    <%= link_to "Learn", " " ,class: "btn btn-large btn-info w-100 h-5 mt-1" %>
                     </li>
                 </div>
                 <% end %>

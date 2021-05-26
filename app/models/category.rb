@@ -1,3 +1,3 @@
-class Category < ApplicationRecord
-  # belongs_to :user
+class Category < ApplicationRecord 
+  has_many :words, dependent: :destroy
 end
