@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_action:admin_user, only: [:new, :create, :edit, :update, :show, :delete]
   
   def index
     @words = Word.where(params[:category_id == params[:category_id]] )
